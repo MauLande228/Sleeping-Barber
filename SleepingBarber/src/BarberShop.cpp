@@ -11,7 +11,6 @@ void BarberShop::Run()
 	Random::Init();
 
 	SharedResources sharedResources = SharedResources();
-	//sharedResources.FreeChairs = 3;
 
 	Barber barber(sharedResources);
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

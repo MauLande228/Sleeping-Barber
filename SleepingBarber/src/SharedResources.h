@@ -16,7 +16,6 @@ struct SharedResources
 	std::binary_semaphore					BarberState{ 0 };
 	std::mutex								SeatsMutex;
 	std::mutex								CslPrint;
-	//std::queue<std::shared_ptr<Customer>>	CustomersQueue;
 	std::queue<Customer*>					CustomersQueue;
 	uint16_t								FreeChairs = 3;
 };
