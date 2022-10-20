@@ -18,9 +18,9 @@ void BarberShop::Run()
 	while (true)
 	{
 		sharedResources.CslPrint.lock();
-		//auto newCustomer = std::make_shared<Customer>(sharedResources);
+
 		auto newCustomer = new Customer(sharedResources);
-		//auto nc = newCustomer.get();
+		
 		SetConsoleTextAttribute(hConsole, BLUE);
 		std::cout << "El cliente -- " << newCustomer->GetId() << " entra a la barberia " << std::endl;
 		sharedResources.CslPrint.unlock();

@@ -25,9 +25,7 @@ void Barber::BarberProc()
 		g_Resources.CustomersInStore.acquire();
 		
 		g_Resources.SeatsMutex.lock();
-		//auto currentCustomer = g_Resources.CustomersQueue.front().get();
 		auto currentCustomer = g_Resources.CustomersQueue.front();
-		//g_Resources.CustomersQueue.pop();
 		g_Resources.FreeChairs += 1;
 
 		g_Resources.CslPrint.lock();
@@ -50,7 +48,7 @@ void Barber::BarberProc()
 		g_Resources.CslPrint.unlock();
 
 		g_Resources.SeatsMutex.lock();
-		g_Resources.CustomersQueue.pop(); //TODO: Fix this shit
+		g_Resources.CustomersQueue.pop();
 		g_Resources.SeatsMutex.unlock();
 
 		g_Resources.BarberState.release();

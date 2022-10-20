@@ -12,7 +12,7 @@ class Customer;
 
 struct SharedResources
 {
-	std::counting_semaphore<1>				CustomersInStore{ 0 };
+	std::binary_semaphore					CustomersInStore{ 0 };
 	std::binary_semaphore					BarberState{ 0 };
 	std::mutex								SeatsMutex;
 	std::mutex								CslPrint;
