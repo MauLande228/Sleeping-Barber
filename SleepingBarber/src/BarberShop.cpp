@@ -27,7 +27,5 @@ void BarberShop::Run()
 
 		using namespace std::literals::chrono_literals;
 		std::this_thread::sleep_for(5s);
-
-		
 	}
 }
